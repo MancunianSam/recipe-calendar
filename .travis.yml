@@ -11,4 +11,4 @@ install:
   - docker-compose build
   - docker tag recipe-server mancuniansam/recipes-server
 script:
-  - docker push
+  - docker push mancuniansam/recipes-server
