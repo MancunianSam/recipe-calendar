@@ -3,6 +3,6 @@ services:
   recipe-server:
     build:
       context: ./server
-    ports: 
+    image: recipe-server:latest
+    ports:
       - 3000:8084/tcp
-    
