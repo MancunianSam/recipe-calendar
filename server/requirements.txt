@@ -1,3 +1,0 @@
-Flask
-python-sqlite-orm
-waitress
