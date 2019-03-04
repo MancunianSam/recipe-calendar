@@ -10,5 +10,5 @@ before_install:
 install:
   - docker-compose build
   - docker tag recipe-calendar_recipe-server mancuniansam/recipes-server
-deploy:
+script:
   - docker push
