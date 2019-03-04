@@ -29,6 +29,11 @@ yarn-error.log*
 /server/include/*
 /server/__pycache__/*
 /server/.idea/*
+/server/app.egg-info/*
+/server/recipes.egg-info/*
+/server/recipes_server.egg-info
+/server/recipes/__pycache__/*
 .vscode/*
+*.pyc
 pip-selfcheck.json
 pyvenv.cfg

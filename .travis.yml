@@ -1,0 +1,14 @@
+services: docker
+
+branches:
+  only:
+    - master
+
+before_install:
+  - docker -v
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+install:
+  - docker-compose build
+  - docker tag recipe-calendar_recipe-server mancuniansam/recipes-server
+deploy:
+  - docker push
