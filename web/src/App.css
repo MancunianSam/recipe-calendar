@@ -1,0 +1,34 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  align-items: center;
+  margin-left: 50px;
+}
+
+body {
+  font-family: "Open Sans";
+}
+
+.app-select {
+  background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96%;
+  height: 29px;
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: hsl(217, 77%, 78%);
+  width: 240px;
+  margin: 10px;
+  -webkit-appearance: none;
+  font-size: 15px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+}
+
+.text-input {
+  height: 25px;
+  border: 1px solid;
+}
