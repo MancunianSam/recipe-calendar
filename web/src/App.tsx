@@ -1,53 +1,51 @@
 import * as React from "react";
 import "./App.css";
+import { DaySelect, LocationSelect } from "./components/select";
+import { InputGroup } from "./components/inputs";
 
 const App: React.FunctionComponent<{}> = (props: any) => {
-  const getNextSevenDays: () => string[] = () => {
-    const today: Date = new Date();
-    const sevenDays: string[] = [today.toDateString()];
-    for (let i in [1, 2, 3, 4, 5, 6]) {
-      today.setDate(today.getDate() + 1);
-      console.log(`${i}, ${today}`);
-      sevenDays.push(today.toDateString());
-    }
-    return sevenDays;
-  };
-
-  const onChange: (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => void = event => {
-    setLocation(event.currentTarget.value);
-  };
-
   const [location, setLocation]: [
     string,
     React.Dispatch<string>
   ] = React.useState<string>("web");
 
+  const [day, setDay]: [string, React.Dispatch<string>] = React.useState<
+    string
+  >("");
+
+  const [url, setUrl]: [string, React.Dispatch<string>] = React.useState<
+    string
+  >("");
+
+  const [bookName, setBookName]: [
+    string,
+    React.Dispatch<string>
+  ] = React.useState<string>("");
+
+  const [page, setPage]: [string, React.Dispatch<string>] = React.useState<
+    string
+  >("");
+
   return (
     <div className="App">
-      <select className="app-select">
-        {getNextSevenDays().map(day => (
-          <option>{day}</option>
-        ))}
-      </select>
-      <select className="app-select" onChange={onChange}>
-        <option value="web">Web</option>
-        <option value="book">Book</option>
-      </select>
+      <DaySelect setStateFunction={setDay} />
+      <LocationSelect setStateFunction={setLocation} />
       {location === "web" && (
-        <div className="inputs">
-          <label htmlFor="url">URL</label>
-          <input type="text" id="url" className="text-input" />
-        </div>
+        <InputGroup
+          inputs={[{ id: "url", label: "URL", setStateFunction: setUrl }]}
+        />
       )}
       {location === "book" && (
-        <div className="inputs">
-          <label htmlFor="bookName">Book Name</label>
-          <input type="text" id="bookName" className="text-input" />
-          <label htmlFor="pageNumber">Page Number</label>
-          <input type="text" id="pageNumber" className="text-input" />
-        </div>
+        <InputGroup
+          inputs={[
+            {
+              id: "bookName",
+              label: "Book Name",
+              setStateFunction: setBookName
+            },
+            { id: "page", label: "Page Number", setStateFunction: setPage }
+          ]}
+        />
       )}
     </div>
   );

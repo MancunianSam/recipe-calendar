@@ -1,0 +1,42 @@
+import * as React from "react";
+import "./InputGroup.css";
+
+export interface IInputProps {
+  setStateFunction: React.Dispatch<string>;
+  id: string;
+  label: string;
+}
+
+interface IInputGroupProps {
+  inputs: IInputProps[];
+}
+
+const InputGroup: React.FunctionComponent<IInputGroupProps> = (
+  props: IInputGroupProps
+) => {
+  const onChange: (
+    event: React.ChangeEvent<HTMLInputElement>,
+    setStateFunction: React.Dispatch<string>
+  ) => void = (event, setStateFunction) => {
+    setStateFunction(event.target.value);
+  };
+  return (
+    <div>
+      {props.inputs.map(input => {
+        return (
+          <div className="inputs" key={input.id}>
+            <label htmlFor={input.id}>{input.label}</label>
+            <input
+              type="text"
+              id={input.id}
+              className="text-input"
+              onChange={event => onChange(event, input.setStateFunction)}
+            />
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+export default InputGroup;

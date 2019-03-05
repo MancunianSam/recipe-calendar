@@ -1,0 +1,10 @@
+.inputs {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+}
+
+.text-input {
+  height: 25px;
+  border: 1px solid;
+}

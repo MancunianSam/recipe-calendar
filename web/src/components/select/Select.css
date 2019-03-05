@@ -1,0 +1,11 @@
+.app-select {
+  background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96%;
+  height: 29px;
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: hsl(217, 77%, 78%);
+  width: 240px;
+  margin: 10px;
+  -webkit-appearance: none;
+  font-size: 15px;
+}
