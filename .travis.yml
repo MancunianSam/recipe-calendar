@@ -1,3 +1,5 @@
+language: node_js
+
 services: docker
 
 branches:
@@ -10,5 +12,8 @@ before_install:
 install:
   - docker-compose build
   - docker tag recipe-server mancuniansam/recipes-server
+  - docker tag recipe-web mancuniansam/recipes-web
+  - build-web.sh
 script:
   - docker push mancuniansam/recipes-server
+  - docker push mancuniansam/recipes-web
