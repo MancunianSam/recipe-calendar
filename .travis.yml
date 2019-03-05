@@ -10,7 +10,7 @@ before_install:
   - docker -v
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 install:
-  - build-web.sh
+  - ./build-web.sh
   - docker-compose build
   - docker tag recipe-server mancuniansam/recipes-server
   - docker tag recipe-web mancuniansam/recipes-web
