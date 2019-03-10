@@ -15,9 +15,12 @@ export const LocationSelect: React.FunctionComponent<ILocationSelectProps> = (
   };
 
   return (
-    <select className="app-select" onChange={onChangeLocation}>
-      <option value="web">Web</option>
-      <option value="book">Book</option>
-    </select>
+    <>
+      <label htmlFor="location">Location</label>
+      <select id="location" className="app-select" onChange={onChangeLocation}>
+        <option value="web">Web</option>
+        <option value="book">Book</option>
+      </select>
+    </>
   );
 };

@@ -18,6 +18,7 @@ const InputGroup: React.FunctionComponent<IInputGroupProps> = (
     event: React.ChangeEvent<HTMLInputElement>,
     setStateFunction: React.Dispatch<string>
   ) => void = (event, setStateFunction) => {
+    console.log("Here");
     setStateFunction(event.target.value);
   };
   return (
@@ -28,6 +29,7 @@ const InputGroup: React.FunctionComponent<IInputGroupProps> = (
             <label htmlFor={input.id}>{input.label}</label>
             <input
               type="text"
+              alt={input.id}
               id={input.id}
               className="text-input"
               onChange={event => onChange(event, input.setStateFunction)}

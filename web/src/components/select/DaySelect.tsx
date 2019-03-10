@@ -26,10 +26,13 @@ export const DaySelect: React.FunctionComponent<IDaySelectProps> = (
   };
 
   return (
-    <select className="app-select" onChange={onChangeDay}>
-      {getNextSevenDays().map(day => (
-        <option key={day}>{day}</option>
-      ))}
-    </select>
+    <>
+      <label htmlFor="daySelect">Day</label>
+      <select id="daySelect" className="app-select" onChange={onChangeDay}>
+        {getNextSevenDays().map(day => (
+          <option key={day}>{day}</option>
+        ))}
+      </select>
+    </>
   );
 };
