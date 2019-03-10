@@ -14,8 +14,6 @@ before_install:
 install:
   - ./build-web.sh
   - docker-compose build
-  - docker tag recipe-server mancuniansam/recipes-server
-  - docker tag recipe-web mancuniansam/recipes-web
 script:
   - docker push mancuniansam/recipes-server
   - docker push mancuniansam/recipes-web

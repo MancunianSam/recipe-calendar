@@ -2,6 +2,7 @@ import * as React from "react";
 import "./App.css";
 import { DaySelect, LocationSelect } from "./components/select";
 import { InputGroup } from "./components/inputs";
+import { AddRecipe } from "./components/buttons";
 
 interface IAppProps {
   defaultLocation?: string;
@@ -53,6 +54,12 @@ const App: React.FunctionComponent<IAppProps> = (props: IAppProps) => {
           ]}
         />
       )}
+      <AddRecipe
+        day={day}
+        book={bookName}
+        url={url}
+        page={parseInt(page, 10)}
+      />
     </div>
   );
 };

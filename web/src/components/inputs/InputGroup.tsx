@@ -28,6 +28,7 @@ const InputGroup: React.FunctionComponent<IInputGroupProps> = (
             <label htmlFor={input.id}>{input.label}</label>
             <input
               type="text"
+              alt={input.id}
               id={input.id}
               className="text-input"
               onChange={event => onChange(event, input.setStateFunction)}
