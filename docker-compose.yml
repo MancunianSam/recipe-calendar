@@ -3,13 +3,26 @@ services:
   recipe-server:
     build:
       context: ./server
-    image: recipe-server:latest
+    image: mancuniansam/recipes-server:latest
     ports:
-      - 3000:8084/tcp
+      - 3002:8084/tcp
+    networks:
+      recipes_net:
+        ipv4_address: 173.17.238.3
 
   recipe-web:
     build:
       context: ./web
-    image: recipe-web:latest
+    image: mancuniansam/recipes-web:latest
     ports:
-      - 80:8085/tcp
+      - 8085:80/tcp
+    networks:
+      recipes_net:
+        ipv4_address: 173.17.238.2
+networks:
+  recipes_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 173.17.238.0/24

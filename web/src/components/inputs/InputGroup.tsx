@@ -18,7 +18,6 @@ const InputGroup: React.FunctionComponent<IInputGroupProps> = (
     event: React.ChangeEvent<HTMLInputElement>,
     setStateFunction: React.Dispatch<string>
   ) => void = (event, setStateFunction) => {
-    console.log("Here");
     setStateFunction(event.target.value);
   };
   return (

@@ -23,7 +23,9 @@ describe("<AddRecipe />", () => {
     const { getByTestId, getByText } = render(
       <AddRecipe day="day" url="url" page={1} book="book" />
     );
-    mock.onPost("/recipes").reply(200, { success: true });
+    mock
+      .onPost("http://172.16.238.3:3002/recipes")
+      .reply(200, { success: true });
     fireEvent.click(getByTestId("addRecipeButton"));
     await waitForElement(() => getByText("Success"));
     expect(mock.history.post[0].data).toEqual(JSON.stringify(data));
