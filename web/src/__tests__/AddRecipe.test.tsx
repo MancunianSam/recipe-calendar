@@ -24,7 +24,7 @@ describe("<AddRecipe />", () => {
       <AddRecipe day="day" url="url" page={1} book="book" />
     );
     mock
-      .onPost("http://172.16.238.3:3002/recipes")
+      .onPost("http://173.17.238.3:8084/recipes")
       .reply(200, { success: true });
     fireEvent.click(getByTestId("addRecipeButton"));
     await waitForElement(() => getByText("Success"));
