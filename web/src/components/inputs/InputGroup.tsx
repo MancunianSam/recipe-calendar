@@ -7,7 +7,7 @@ export interface IInputProps {
   label: string;
 }
 
-interface IInputGroupProps {
+export interface IInputGroupProps {
   inputs: IInputProps[];
 }
 

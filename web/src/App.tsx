@@ -3,11 +3,17 @@ import "./App.css";
 import { DaySelect, LocationSelect } from "./components/select";
 import { InputGroup } from "./components/inputs";
 
-const App: React.FunctionComponent<{}> = (props: any) => {
+interface IAppProps {
+  defaultLocation?: string;
+}
+
+const App: React.FunctionComponent<IAppProps> = (props: IAppProps) => {
   const [location, setLocation]: [
     string,
     React.Dispatch<string>
-  ] = React.useState<string>("web");
+  ] = React.useState<string>(
+    props.defaultLocation ? props.defaultLocation : "web"
+  );
 
   const [day, setDay]: [string, React.Dispatch<string>] = React.useState<
     string

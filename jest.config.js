@@ -2,6 +2,7 @@ module.exports = {
   transform: {
     "^.+\\.tsx?$": "ts-jest"
   },
-  testRegex: "(/src/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"]
+  testRegex: "(/__tests__/|).*(test\\.ts|test.tsx)$",
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+  setupTestFrameworkScriptFile: "<rootDir>/src/setupTests.ts"
 };
