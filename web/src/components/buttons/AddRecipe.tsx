@@ -17,7 +17,7 @@ export const AddRecipe: React.FunctionComponent<IAddRecipeProps> = props => {
     event: React.MouseEvent<HTMLButtonElement>
   ) => void = event => {
     const { day, url, page, book } = props;
-    Axios.post("http://173.17.238.3:8084/recipes", { day, url, page, book })
+    Axios.post("http://localhost:3002/recipes", { day, url, page, book })
       .then(response => {
         if (response.data.success) {
           setMessage("Success");
