@@ -37,15 +37,13 @@ class RecipeTest(unittest.TestCase):
         assert len(data['recipes']) == 1
 
     def test_post_returns_success(self):
-        data = {"recipes": [
-            {"day": "Saturday", "url": None, "book": "Steak", "page": 2}]}
+        data = {"day": "Saturday", "url": None, "book": "Steak", "page": 2}
         result = self.app.post('/recipes', json=data)
 
         assert json.loads(result.data)['success']
 
     def test_post_stores_data(self):
-        data = {"recipes": [
-            {"day": "Saturday", "url": None, "book": "Steak", "page": 2}]}
+        data =  {"day": "Saturday", "url": None, "book": "Steak", "page": 2}
         self.app.post('/recipes', json=data)
         result = self.app.get('/recipes')
         data = json.loads(result.data)
