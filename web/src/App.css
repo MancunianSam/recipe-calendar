@@ -1,9 +1,29 @@
 .App {
   display: flex;
   flex-direction: column;
-  width: 240px;
   align-items: center;
-  margin-left: 50px;
+}
+
+.menuWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.menuItem {
+  padding: 0px 100px;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+@media (max-width: 500px) {
+  .menuWrapper {
+    height: 30px;
+  }
+  .menuItem {
+    padding: 0 2px;
+  }
 }
 
 body {

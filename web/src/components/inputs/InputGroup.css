@@ -1,10 +1,12 @@
 .inputs {
   display: flex;
   flex-direction: column;
-  width: 240px;
+  width: 300px;
+  align-items: center;
 }
 
 .text-input {
   height: 25px;
   border: 1px solid;
+  width: 300px;
 }

@@ -35,6 +35,10 @@ const App: React.FunctionComponent<IAppProps> = (props: IAppProps) => {
 
   return (
     <div className="App">
+      <div className="menuWrapper">
+        <span className="menuItem">Add Recipe</span>
+        <span className="menuItem">View Recipes</span>
+      </div>
       <DaySelect setStateFunction={setDay} />
       <LocationSelect setStateFunction={setLocation} />
       {location === "web" && (

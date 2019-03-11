@@ -1,0 +1,29 @@
+button {
+  width: 300px;
+  border-radius: 5px;
+  font-family: Open Sans;
+  font-size: 16px;
+  color: black;
+  background-color: hsl(217, 77%, 78%);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  padding: 4px;
+  margin-top: 10px;
+}
+
+.addRecipe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.message {
+  margin-top: 10px;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}

@@ -1,6 +1,8 @@
 import * as React from "react";
 import Axios from "axios";
 
+import "./Buttons.css";
+
 interface IAddRecipeProps {
   day: string;
   page: number;
@@ -27,11 +29,13 @@ export const AddRecipe: React.FunctionComponent<IAddRecipeProps> = props => {
   };
 
   return (
-    <div>
+    <div className="addRecipe">
       <button onClick={onClick} data-testid="addRecipeButton">
         Add Recipe
       </button>
-      <span className="message">{message}</span>
+      <span className={`message ${message === "Success" ? "green" : "red"}`}>
+        {message}
+      </span>
     </div>
   );
 };
