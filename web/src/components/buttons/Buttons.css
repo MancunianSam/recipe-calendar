@@ -4,7 +4,7 @@ button {
   font-family: Open Sans;
   font-size: 16px;
   color: black;
-  background-color: hsl(217, 77%, 78%);
+  background-color: #cac4d6;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   padding: 4px;
   margin-top: 10px;

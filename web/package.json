@@ -1,6 +1,6 @@
 {
   "name": "recipe-calendar",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "private": true,
   "dependencies": {
     "@types/enzyme-adapter-react-16": "^1.0.5",
@@ -11,7 +11,6 @@
     "axios": "^0.18.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-scripts": "2.1.5",
     "typescript": "3.3.3333"
   },
   "scripts": {
@@ -33,6 +32,8 @@
     "@types/axios-mock-adapter": "^1.10.0",
     "axios-mock-adapter": "^1.16.0",
     "enzyme-adapter-react-16": "^1.10.0",
-    "react-testing-library": "^6.0.0"
+    "react-scripts": "^2.1.8",
+    "react-testing-library": "^6.0.0",
+    "ts-jest": "^24.0.0"
   }
 }
