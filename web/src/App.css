@@ -1,13 +1,48 @@
+html {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
 .App {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #d6d0c4;
+  height: 100%;
 }
 
 .menuWrapper {
+  height: 40px;
+  background-color: #cac4d6;
   width: 100%;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.menuItems {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menuLinks {
+  padding-right: 0.5em;
+}
+
+.menuIcon {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
 }
 
 .menuItem {
