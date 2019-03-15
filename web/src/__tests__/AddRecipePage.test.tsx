@@ -1,30 +1,30 @@
 import React from "react";
-import App from "./App";
+import { AddRecipePage } from "../pages/AddRecipePage";
 import { render, fireEvent, waitForElement } from "react-testing-library";
 
-describe("<App/>", () => {
+describe("<AddRecipePage/>", () => {
   test("renders without crashing", () => {
-    const { container } = render(<App />);
+    const { container } = render(<AddRecipePage />);
     expect(container).not.toBeNull();
   });
 
   test("renders the day select", () => {
-    const { getByLabelText } = render(<App />);
+    const { getByLabelText } = render(<AddRecipePage />);
     getByLabelText("Day");
   });
 
   test("renders the location select", () => {
-    const { getByLabelText } = render(<App />);
+    const { getByLabelText } = render(<AddRecipePage />);
     getByLabelText("Location");
   });
 
   test("renders the correct default input group", () => {
-    const { getByAltText } = render(<App />);
+    const { getByAltText } = render(<AddRecipePage />);
     getByAltText("url");
   });
 
   test("renders the correct input group for book location", async () => {
-    const { getByAltText } = render(<App defaultLocation="book" />);
+    const { getByAltText } = render(<AddRecipePage defaultLocation="book" />);
     getByAltText("bookName");
     getByAltText("page");
   });
