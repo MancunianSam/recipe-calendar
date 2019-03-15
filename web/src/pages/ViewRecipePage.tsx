@@ -13,7 +13,9 @@ const ViewRecipePage: React.FunctionComponent<{}> = () => {
     return new Date().toDateString();
   };
   const getRecipeForToday: () => Promise<IRecipe> = async () => {
-    const response = await Axios.get("http://localhost:3002/recipes");
+    const response = await Axios.get(
+      "https://sampalmer.dev/recipes-server/recipes"
+    );
     const recipes: IRecipe[] = response.data["recipes"];
     console.log(recipes);
 
