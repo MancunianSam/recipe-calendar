@@ -22,7 +22,7 @@ export const AddRecipe: React.FunctionComponent<IAddRecipeProps> = props => {
     event: React.MouseEvent<HTMLButtonElement>
   ) => void = event => {
     const { day, url, page, book } = props;
-    Axios.post(`recipes-server/recipes`, {
+    Axios.post(`${config.serverUrl}/recipes`, {
       day,
       url,
       page,

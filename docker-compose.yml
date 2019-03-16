@@ -4,6 +4,8 @@ services:
     build:
       context: ./server
     image: mancuniansam/recipes-server:latest
+    environment:
+      - REACT_APP_SERVER_URL=http://localhost:3002
     ports:
       - 3002:8084/tcp
     networks:
