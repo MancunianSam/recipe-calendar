@@ -28,7 +28,7 @@ const App: React.FunctionComponent<{}> = _ => {
       <Header setPageName={setPageName} />
       {pageName === "addRecipe" && (
         <AddRecipePage
-          defaultLocation={"web"}
+          defaultLocation={"book"}
           setRecipes={setRecipes}
           recipes={recipes}
         />

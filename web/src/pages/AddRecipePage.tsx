@@ -15,9 +15,7 @@ const AddRecipePage: React.FunctionComponent<IAddRecipePageProps> = props => {
   const [location, setLocation]: [
     string,
     React.Dispatch<string>
-  ] = React.useState<string>(
-    props.defaultLocation ? props.defaultLocation : "web"
-  );
+  ] = React.useState<string>(props.defaultLocation);
 
   const [day, setDay]: [string, React.Dispatch<string>] = React.useState<
     string
@@ -51,12 +49,16 @@ const AddRecipePage: React.FunctionComponent<IAddRecipePageProps> = props => {
       setDone(isDone);
     }
   });
-
   return (
     <>
       <DaySelect setStateFunction={onDayChange} done={done} />
 
-      {!done && <LocationSelect setStateFunction={setLocation} />}
+      {!done && (
+        <LocationSelect
+          setStateFunction={setLocation}
+          defaultLocation={props.defaultLocation}
+        />
+      )}
       {!done && location === "web" && (
         <InputGroup
           inputs={[{ id: "url", label: "URL", setStateFunction: setUrl }]}

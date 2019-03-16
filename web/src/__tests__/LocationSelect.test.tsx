@@ -11,7 +11,7 @@ describe("<LocationSelect/>", () => {
   beforeEach(cleanup);
   test("renders without crashing", () => {
     const { container } = render(
-      <LocationSelect setStateFunction={jest.fn()} />
+      <LocationSelect setStateFunction={jest.fn()} defaultLocation="web" />
     );
     expect(container).not.toBeNull();
   });
@@ -21,7 +21,7 @@ describe("<LocationSelect/>", () => {
     global.Date.now = jest.fn(() => mockedDate.getTime());
 
     const { container, getByText } = render(
-      <LocationSelect setStateFunction={jest.fn()} />
+      <LocationSelect setStateFunction={jest.fn()} defaultLocation="web" />
     );
     getByText("Web");
     getByText("Book");
@@ -30,7 +30,7 @@ describe("<LocationSelect/>", () => {
   test("onChange calls setState function correctly", () => {
     const stateFunction: jest.Mock = jest.fn();
     const { getByLabelText } = render(
-      <LocationSelect setStateFunction={stateFunction} />
+      <LocationSelect setStateFunction={stateFunction} defaultLocation="web" />
     );
     fireEvent.change(getByLabelText("Location"), {
       currentTarget: { value: "book" }

@@ -23,6 +23,7 @@ export const DaySelect: React.FunctionComponent<IDaySelectProps> = (
     event: React.ChangeEvent<HTMLSelectElement>
   ) => void = event => {
     props.setStateFunction(event.currentTarget.value);
+    console.log("here");
   };
 
   return (

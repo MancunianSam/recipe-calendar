@@ -3,6 +3,7 @@ import "./Select.css";
 
 interface ILocationSelectProps {
   setStateFunction: React.Dispatch<string>;
+  defaultLocation: string;
 }
 
 export const LocationSelect: React.FunctionComponent<ILocationSelectProps> = (
@@ -17,7 +18,12 @@ export const LocationSelect: React.FunctionComponent<ILocationSelectProps> = (
   return (
     <>
       <label htmlFor="location">Location</label>
-      <select id="location" className="app-select" onChange={onChangeLocation}>
+      <select
+        id="location"
+        className="app-select"
+        onChange={onChangeLocation}
+        defaultValue={props.defaultLocation}
+      >
         <option value="web">Web</option>
         <option value="book">Book</option>
       </select>

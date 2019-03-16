@@ -51,10 +51,9 @@ describe("<AddRecipePage/>", () => {
   });
 
   test("renders the correct input group for book location", async () => {
-    const day: string = new Date().toDateString();
     const { getByAltText } = render(
       <AddRecipePage
-        recipes={[{ day }]}
+        recipes={[{ day: "abcde" }]}
         defaultLocation="book"
         setRecipes={jest.fn()}
       />
