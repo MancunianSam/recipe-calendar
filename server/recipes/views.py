@@ -4,6 +4,12 @@ from flask import request
 from recipes import app, db
 from recipes.models import Recipes
 
+def get_recipes():
+    recipes = []
+    for row in Recipes.query.all():
+        recipes.append(
+            {"day": row.day, "url": row.url, "book": row.book, "page": row.page})
+    return recipes
 
 @app.route("/recipes", methods=['GET', 'POST'])
 def recipes():
@@ -14,10 +20,9 @@ def recipes():
             day=recipe_obj.day, url=recipe_obj.url, book=recipe_obj.book, page=recipe_obj.page)
         db.session.add(recipe_db)
         db.session.commit()
-        return '{"success": true}'
+        recipes = get_recipes()
+        response = {"success": True, "recipes": recipes}
+        return json.dumps(response)
     if request.method == 'GET':
-        recipes = []
-        for row in Recipes.query.all():
-            recipes.append(
-                {"day": row.day, "url": row.url, "book": row.book, "page": row.page})
+        recipes = get_recipes()
         return json.dumps({"recipes": recipes})
