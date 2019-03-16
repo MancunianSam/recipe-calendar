@@ -8,7 +8,6 @@ import {
   waitForElement,
   cleanup
 } from "react-testing-library";
-import { config } from "../confiig/config";
 
 const mock = new MockAdapter(Axios);
 
@@ -33,7 +32,7 @@ describe("<AddRecipe />", () => {
         setRecipes={jest.fn()}
       />
     );
-    mock.onPost(`${config.serverUrl}/recipes`).reply(200, { success: true });
+    mock.onPost(`recipes-server/recipes`).reply(200, { success: true });
     fireEvent.click(getByTestId("addRecipeButton"));
     await waitForElement(() => getByText("Success"));
     expect(mock.history.post[0].data).toEqual(JSON.stringify(data));
