@@ -1,8 +1,9 @@
 import * as React from "react";
 import Axios from "axios";
+import { config } from "../confiig/config";
 
-interface IRecipe {
-  day: string;
+export interface IRecipe {
+  day?: string;
   book?: string;
   page?: number;
   url?: string;
@@ -13,9 +14,7 @@ const ViewRecipePage: React.FunctionComponent<{}> = () => {
     return new Date().toDateString();
   };
   const getRecipeForToday: () => Promise<IRecipe> = async () => {
-    const response = await Axios.get(
-      "https://sampalmer.dev/recipes-server/recipes"
-    );
+    const response = await Axios.get(`${config.serverUrl}/recipes`);
     const recipes: IRecipe[] = response.data["recipes"];
     console.log(recipes);
 
@@ -25,7 +24,7 @@ const ViewRecipePage: React.FunctionComponent<{}> = () => {
   const [recipe, setRecipe]: [
     IRecipe,
     React.Dispatch<IRecipe>
-  ] = React.useState({ day: new Date().toDateString() });
+  ] = React.useState<IRecipe>({});
 
   React.useEffect(() => {
     getRecipeForToday().then(recipe => setRecipe(recipe));

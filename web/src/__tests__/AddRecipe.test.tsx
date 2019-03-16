@@ -8,24 +8,32 @@ import {
   waitForElement,
   cleanup
 } from "react-testing-library";
-import { act } from "react-dom/test-utils";
+import { config } from "../confiig/config";
 
 const mock = new MockAdapter(Axios);
 
 describe("<AddRecipe />", () => {
   beforeEach(cleanup);
   test("Renders without crashing", () => {
-    expect(render(<AddRecipe day="" url="" page={1} book="" />)).not.toBeNull();
+    expect(
+      render(
+        <AddRecipe day="" url="" page={1} book="" setRecipes={jest.fn()} />
+      )
+    ).not.toBeNull();
   });
 
   test("A successful post shows the success message", async () => {
     const data = { day: "day", url: "url", page: 1, book: "book" };
     const { getByTestId, getByText } = render(
-      <AddRecipe day="day" url="url" page={1} book="book" />
+      <AddRecipe
+        day="day"
+        url="url"
+        page={1}
+        book="book"
+        setRecipes={jest.fn()}
+      />
     );
-    mock
-      .onPost("https://sampalmer.dev/recipes-server/recipes")
-      .reply(200, { success: true });
+    mock.onPost(`${config.serverUrl}/recipes`).reply(200, { success: true });
     fireEvent.click(getByTestId("addRecipeButton"));
     await waitForElement(() => getByText("Success"));
     expect(mock.history.post[0].data).toEqual(JSON.stringify(data));
