@@ -31,25 +31,30 @@ const ViewRecipePage: React.FunctionComponent<{}> = () => {
   }, []);
   return (
     <div>
-      <h1>{recipe.day}</h1>
-      {recipe.url && (
-        <div>
-          <h2>URL:</h2>
-          <h2>{recipe.url}</h2>
-        </div>
+      {recipe && (
+        <>
+          <h1>{recipe.day}</h1>
+          {recipe.url && (
+            <div>
+              <h2>URL:</h2>
+              <h2>{recipe.url}</h2>
+            </div>
+          )}
+          {recipe.book && (
+            <div>
+              <h2>Book:</h2>
+              <h2>{recipe.book}</h2>
+            </div>
+          )}
+          {recipe.book && (
+            <div>
+              <h2>Page:</h2>
+              <h2>{recipe.page}</h2>
+            </div>
+          )}
+        </>
       )}
-      {recipe.book && (
-        <div>
-          <h2>Book:</h2>
-          <h2>{recipe.book}</h2>
-        </div>
-      )}
-      {recipe.book && (
-        <div>
-          <h2>Page:</h2>
-          <h2>{recipe.page}</h2>
-        </div>
-      )}
+      {!recipe && <span>No recipe found</span>}
     </div>
   );
 };
