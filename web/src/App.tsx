@@ -3,7 +3,6 @@ import "./App.css";
 import { Header } from "./components/header/Header";
 import { AddRecipePage, ViewRecipePage } from "./pages";
 import Axios from "axios";
-import { config } from "./confiig/config";
 import { IRecipe } from "./pages/ViewRecipePage";
 
 const App: React.FunctionComponent<{}> = _ => {
@@ -18,7 +17,7 @@ const App: React.FunctionComponent<{}> = _ => {
   ] = React.useState<IRecipe[]>([]);
 
   React.useEffect(() => {
-    Axios.get(`${config.serverUrl}/recipes`).then(response => {
+    Axios.get(`recipes-server/recipes`).then(response => {
       setRecipes(response.data["recipes"]);
     });
   }, []);
