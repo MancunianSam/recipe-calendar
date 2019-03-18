@@ -37,19 +37,19 @@ const ViewRecipePage: React.FunctionComponent<{}> = () => {
           {recipe.url && (
             <div>
               <h2>URL:</h2>
-              <h2>{recipe.url}</h2>
+              <h2 className="urlForToday">{recipe.url}</h2>
             </div>
           )}
           {recipe.book && (
             <div>
               <h2>Book:</h2>
-              <h2>{recipe.book}</h2>
+              <h2 className="bookForToday">{recipe.book}</h2>
             </div>
           )}
           {recipe.book && (
             <div>
               <h2>Page:</h2>
-              <h2>{recipe.page}</h2>
+              <h2 className="pageForToday">{recipe.page}</h2>
             </div>
           )}
         </>

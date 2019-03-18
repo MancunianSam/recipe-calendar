@@ -18,6 +18,7 @@ const App: React.FunctionComponent<{}> = _ => {
   ] = React.useState<IRecipe[]>([]);
 
   React.useEffect(() => {
+    console.log(process.env);
     Axios.get(`${config.serverUrl}/recipes`).then(response => {
       setRecipes(response.data["recipes"]);
     });

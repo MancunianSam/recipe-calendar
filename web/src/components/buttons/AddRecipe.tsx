@@ -39,7 +39,11 @@ export const AddRecipe: React.FunctionComponent<IAddRecipeProps> = props => {
 
   return (
     <div className="addRecipe">
-      <button onClick={onClick} data-testid="addRecipeButton">
+      <button
+        onClick={onClick}
+        data-testid="addRecipeButton"
+        id="addRecipeButton"
+      >
         Add Recipe
       </button>
       <span className={`message ${message === "Success" ? "green" : "red"}`}>

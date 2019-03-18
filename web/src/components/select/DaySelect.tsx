@@ -34,9 +34,7 @@ export const DaySelect: React.FunctionComponent<IDaySelectProps> = (
           <option key={day}>{day}</option>
         ))}
       </select>
-      {props.done && (
-        <span style={{ fontSize: "20px", color: "green" }}>{"\u2713"}</span>
-      )}
+      {props.done && <span className="checkmark">{"\u2713"}</span>}
     </>
   );
 };

@@ -37,3 +37,7 @@ yarn-error.log*
 *.pyc
 pip-selfcheck.json
 pyvenv.cfg
+
+web/cypress/videos/*
+web/cypress/screenshots/*
+nohup.out
