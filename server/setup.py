@@ -5,6 +5,6 @@ setup(
     packages=['recipes'],
     include_package_data=True,
     install_requires=[
-        'flask', 'waitress', 'flask-sqlalchemy', 'flask-cors'
+        'flask', 'waitress', 'flask-sqlalchemy', 'flask-cors', 'coverage'
     ],
 )
