@@ -2,6 +2,7 @@
 [![Cypress.io tests](https://img.shields.io/badge/cypress.io-tests-brightgreen.svg?style=flat-square)](https://dashboard.cypress.io/#/projects/5jojy8/runs)
 [![codecov](https://codecov.io/gh/MancunianSam/recipe-calendar/branch/master/graph/badge.svg)](https://codecov.io/gh/MancunianSam/recipe-calendar)
 ![GitHub](https://img.shields.io/github/license/MancunianSam/recipe-calendar.svg)
+![Code Climate maintainability (percentage)](https://img.shields.io/codeclimate/maintainability-percentage/MancunianSam/recipe-calendar.svg)
 
 ## Recipe Calendar
 
