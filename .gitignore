@@ -41,3 +41,4 @@ pyvenv.cfg
 web/cypress/videos/*
 web/cypress/screenshots/*
 nohup.out
+web/coverage/*
